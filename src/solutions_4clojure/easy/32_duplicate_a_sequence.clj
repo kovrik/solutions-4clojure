@@ -1,10 +1,9 @@
 (defn dup [s]
-  (let [res []]
-    ))
-
-(dup [1 2 3])
-
-(= (dup [1 2 3]) '( 1  2  3))
+  (loop [source s
+         dest []]
+    (if (empty? source)
+      dest
+      (recur (rest source) (conj dest (first source) (first source))))))
 
 (= (dup [1 2 3]) '(1 1 2 2 3 3))
 
