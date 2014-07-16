@@ -1,6 +1,9 @@
 ; restrictions: group-by
 
-(defn grp-by )
+(defn grp-by [f s]
+  (reduce #(assoc %1 (f %2) (conj (apply vector (%1 (f %2))) %2))
+  {}
+  s))
 
 
 (= (grp-by #(> % 5) [1 3 6 8]) {false [1 3], true [6 8]})
