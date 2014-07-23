@@ -1,1 +1,4 @@
-(ns solutions-4clojure.easy.173-intro-to-destructuring-2)
+(= 3
+  (let [[__] [+ (range 3)]] (apply __))
+  (let [[[__] b] [[+ 1] 2]] (__ b))
+  (let [[__] [inc 2]] (__)))

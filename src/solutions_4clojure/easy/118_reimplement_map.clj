@@ -4,9 +4,11 @@
 ;   mapcat
 ;   for
 
-(defn my-map [f coll]
-  (if-not (empty? coll)
-    (cons (f (first coll)) (lazy-seq (my-map f (rest coll))))))
+; 118 - Reimplement map
+(fn my-map [f coll]
+  (lazy-seq
+    (if (seq coll)
+      (cons (f (first coll)) (my-map f (rest coll))))))
 
 (= [3 4 5 6 7]
    (my-map inc [2 3 4 5 6]))
