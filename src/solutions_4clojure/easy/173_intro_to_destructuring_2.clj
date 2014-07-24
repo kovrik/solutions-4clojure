@@ -1,4 +1,5 @@
+; 173 - intro to destructuring 2
 (= 3
-  (let [[__] [+ (range 3)]] (apply __))
-  (let [[[__] b] [[+ 1] 2]] (__ b))
-  (let [[__] [inc 2]] (__)))
+   (let [[op arg] [+ (range 3)]] (apply op arg))
+   (let [[[op arg] b] [[+ 1] 2]] (op arg b))
+   (let [[op arg] [inc 2]] (op arg)))
