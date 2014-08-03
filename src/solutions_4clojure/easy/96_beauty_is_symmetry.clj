@@ -9,7 +9,6 @@
     (= (walk tree :left)
        (walk tree :right))))
 
-
 (= (symmetric? '(:a (:b nil nil) (:b nil nil))) true)
 
 (= (symmetric? '(:a (:b nil nil) nil)) false)
